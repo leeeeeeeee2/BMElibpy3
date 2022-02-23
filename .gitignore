@@ -129,3 +129,4 @@ dmypy.json
 .pyre/
 
 bmelibpy1.0c/.vscode/
+BMELIB2.0b/*
