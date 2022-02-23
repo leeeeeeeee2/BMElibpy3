@@ -1,0 +1,7 @@
+arrayrange : rounding errors. When a sequence is generated with arrayrange (ex. arrayrange(-3,3,0.1)), the integer values -2, -1, 0,... are not true integers. Ex. 0==1.66e-16. This can result in errors, e.g. in statlib.py on line 423 (gausspdf)
+
+statlib/vario : plot vario is not working correctly (problem using matplotlib)
+
+SOLVED
+statlib/vario : problem running the loop method : solved (statlib.py 1.6)
+statlib/histscaled : not working

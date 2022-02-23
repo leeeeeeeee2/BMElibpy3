@@ -1,0 +1,23 @@
+!    -*- f90 -*-
+! Note: the context of this file is case sensitive.
+
+python module mvnAG1 ! in 
+    interface  ! in :mvnAG1
+        subroutine sadmvn(n,lower,upper,infin,correl,maxpts,abseps,releps,error,value,inform) ! in :mvnAG1:mvnPack.f
+            integer intent(in) :: n
+            double precision dimension(*),intent(in) :: lower
+            double precision dimension(*),intent(in) :: upper
+            integer dimension(*),intent(in) :: infin
+            double precision dimension(*),intent(in) :: correl
+            integer intent(in) :: maxpts
+            double precision intent(in) :: abseps
+            double precision intent(in) :: releps
+            double precision intent(out) :: error
+            double precision intent(out) :: value
+            integer intent(out) :: inform
+        end subroutine sadmvn
+    end interface 
+end python module mvnAG1
+
+! This file was auto-generated with f2py (version:2.39.235_1756).
+! See http://cens.ioc.ee/projects/f2py2e/

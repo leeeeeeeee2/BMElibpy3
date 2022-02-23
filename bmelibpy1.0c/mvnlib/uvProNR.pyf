@@ -1,0 +1,23 @@
+!    -*- f90 -*-
+! Note: the context of this file is case sensitive.
+
+python module uvProNR ! in 
+    interface  ! in :uvProNR
+        subroutine uvpronr(softpdftype,nl,limi,prob,mean,c,aeps,reps,value,error,ifail) ! in :uvProNR:uvProNR.f
+            integer intent(in) :: softpdftype
+            integer intent(in) :: nl
+            double precision dimension(*),intent(in)  :: limi
+            double precision dimension(*),intent(in)  :: prob
+            double precision intent(in) :: mean
+            double precision intent(in) :: c
+            double precision intent(in) :: aeps
+            double precision intent(in) :: reps
+            double precision intent(out) :: value
+            double precision intent(out) :: error
+            integer intent(out) :: ifail
+        end subroutine uvpronr
+    end interface 
+end python module uvProNR
+
+! This file was auto-generated with f2py (version:2.39.235_1756).
+! See http://cens.ioc.ee/projects/f2py2e/

@@ -1,0 +1,10 @@
+Status convention for the translated functions (Dimitri D'Or - Nov 2004):
+
+NOT COMPLETED: Translation not finished.
+	       Possible cause:
+			-dependencies not completed
+
+DEBUGGED NOT TESTED: Function is running but results have not been validated
+		     by a comparison with the Matlab outputs.
+
+APPROVED: Function has been validated by comparison with Matlab results.

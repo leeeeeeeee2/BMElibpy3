@@ -1,0 +1,26 @@
+!    -*- f90 -*-
+! Note: the context of this file is case sensitive.
+
+python module mvProAG2 ! in 
+    interface  ! in :mvProAG2
+        subroutine mvproag2(ndim,softpdftype,nl,limi,prob,mean,c,maxpts,aeps,reps,key,value,error,ifail) ! in :mvProAG2:mvProAG2.f
+            integer intent(in) :: ndim
+            integer intent(in) :: softpdftype
+            integer dimension(*),intent(in) :: nl
+            double precision dimension(*),intent(in) :: limi
+            double precision dimension(*),intent(in) :: prob
+            double precision dimension(*),intent(in) :: mean
+            double precision dimension(*),intent(in) :: c
+            integer intent(in) :: maxpts
+            double precision intent(in) :: aeps
+            double precision intent(in) :: reps
+            integer intent(in) :: key
+            double precision dimension(*),intent(out) :: value
+            double precision dimension(*),intent(out) :: error
+            integer intent(out) :: ifail
+        end subroutine mvproag2
+    end interface 
+end python module mvProAG2
+
+! This file was auto-generated with f2py (version:2.39.235_1756).
+! See http://cens.ioc.ee/projects/f2py2e/

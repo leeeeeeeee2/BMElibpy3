@@ -1,0 +1,24 @@
+* BME dev sous Linux 
+
+Installation de l'environnement de développement sous Linux
+
+
+1) création des clefs ssh :
+
+sshkeygen -t dsa -c "commentaire"
+envoyer id_dsa.pub sur le serveur (pour sourceforge.net, utilisez le formulaire en ligne !)
+
+1) CVS 
+
+export CVS_RSH=ssh 
+cvs -z3 -d:ext:developername@cvs.sourceforge.net:/cvsroot/bmelibpy co bmelibpy1.0
+
+3) installation pour support bmelib :
+
+Prérequis : comilateur fortran (g77), python 2.3 avec librairies de développement (libpython-devel), librairie liblapack et libblas (+ les versions de développement)+ libgsl0 (et développement) + atlas
+
+- download 
+numeric 23.1
+matplotlib 0.61 (--> requires Numeric, numarray, freetype)
+scipy 0.3
+f2py

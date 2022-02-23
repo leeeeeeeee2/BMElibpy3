@@ -1,0 +1,133 @@
+numpy_info:
+  FOUND:
+    define_macros = [('NUMERIC_VERSION', '"\\"23.3\\""')]
+    include_dirs = ['/usr/include/python2.3']
+
+running build
+running config_fc
+running build_src
+building extension "mvnlib" sources
+creating /tmp/tmpLySnHJ
+creating /tmp/tmpLySnHJ/src
+f2py: mvnlib.pyf
+Reading fortran codes...
+	Reading file 'mvnlib.pyf'
+Post-processing...
+	Block: mvnlib
+			Block: mvmomvecag2
+		Block: sadmvn
+		Block: mvproag2
+		Block: uvmomnr
+		Block: uvpronr
+Post-processing (stage 2)...
+Building modules...
+	Building module "mvnlib"...
+		Constructing wrapper function "mvmomvecag2"...
+		  value,error,ifail = mvmomvecag2(ndim,softpdftype,nl,limi,prob,mean,c,nmom,as,bs,p,maxpts,aeps,reps,key)
+	Wrote C/API module "mvnlib" to file "/tmp/tmpLySnHJ/src/mvnlibmodule.c"
+  adding '/tmp/tmpLySnHJ/src/fortranobject.c' to sources.
+  adding '/tmp/tmpLySnHJ/src' to include_dirs.
+copying /usr/lib/python2.3/site-packages/f2py2e/src/fortranobject.c -> /tmp/tmpLySnHJ/src
+copying /usr/lib/python2.3/site-packages/f2py2e/src/fortranobject.h -> /tmp/tmpLySnHJ/src
+running build_ext
+customize UnixCCompiler
+customize UnixCCompiler using build_ext
+customize GnuFCompiler
+customize GnuFCompiler
+customize GnuFCompiler using build_ext
+building 'mvnlib' extension
+compling C sources
+gcc options: '-pthread -fno-strict-aliasing -DNDEBUG -g -O3 -Wall -Wstrict-prototypes -fPIC'
+creating /tmp/tmpLySnHJ/tmp
+creating /tmp/tmpLySnHJ/tmp/tmpLySnHJ
+creating /tmp/tmpLySnHJ/tmp/tmpLySnHJ/src
+compile options: '-I/usr/include/python2.3 -I/tmp/tmpLySnHJ/src -I/usr/include/python2.3 -c'
+gcc: /tmp/tmpLySnHJ/src/fortranobject.c
+gcc: /tmp/tmpLySnHJ/src/mvnlibmodule.c
+compling Fortran sources
+g77-3.3(f77) options: '-Wall -fno-second-underscore -fPIC -O3 -funroll-loops'
+compile options: '-I/usr/include/python2.3 -I/tmp/tmpLySnHJ/src -I/usr/include/python2.3 -c'
+g77-3.3:f77: dcuhre.f
+dcuhre.f: In subroutine `dfshre':
+dcuhre.f:2231: warning: `lxchng' might be used uninitialized in this function
+dcuhre.f: In subroutine `dtrhre':
+dcuhre.f:2357: warning: `subrgn' might be used uninitialized in this function
+g77-3.3:f77: mvMomVecAG2.f
+g77-3.3:f77: mvnPack.f
+mvnPack.f: In subroutine `scrude':
+mvnPack.f:392: warning: unused variable `uni'
+mvnPack.f:392: warning: unused variable `x'
+mvnPack.f:391: warning: unused variable `npts'
+mvnPack.f:391: warning: unused variable `k'
+mvnPack.f: In subroutine `ncvsrt':
+mvnPack.f:942: warning: `amin' might be used uninitialized in this function
+mvnPack.f:942: warning: `bmin' might be used uninitialized in this function
+mvnPack.f: In function `bvn':
+mvnPack.f:1413: warning: `bvn' might be used uninitialized in this function
+mvnPack.f: In function `fulsum':
+mvnPack.f:2067: warning: `lxchng' might be used uninitialized in this function
+mvnPack.f: Outside of any program unit:
+mvnPack.f:1129: warning: `t' might be used uninitialized in this function
+g77-3.3:f77: mvProAG2.f
+g77-3.3:f77: polint3.f
+g77-3.3:f77: qromb3.f
+g77-3.3:f77: symInv.f
+symInv.f: In subroutine `chol':
+symInv.f:122: warning: `w' might be used uninitialized in this function
+g77-3.3:f77: trapzd3.f
+g77-3.3:f77: uvMomNR.f
+uvMomNR.f: In function `uvf':
+uvMomNR.f:85: warning: unused variable `sum'
+uvMomNR.f:80: warning: unused variable `nfun'
+uvMomNR.f:72: warning: `uvf' might be used uninitialized in this function
+uvMomNR.f:85: warning: `fs' might be used uninitialized in this function
+g77-3.3:f77: uvProNR.f
+uvProNR.f: In function `uvf':
+uvProNR.f:82: warning: unused variable `sum'
+uvProNR.f:77: warning: unused variable `nfun'
+uvProNR.f:69: warning: `uvf' might be used uninitialized in this function
+uvProNR.f:82: warning: `fs' might be used uninitialized in this function
+/usr/bin/g77-3.3 -shared /tmp/tmpLySnHJ/tmp/tmpLySnHJ/src/mvnlibmodule.o /tmp/tmpLySnHJ/tmp/tmpLySnHJ/src/fortranobject.o /tmp/tmpLySnHJ/dcuhre.o /tmp/tmpLySnHJ/mvMomVecAG2.o /tmp/tmpLySnHJ/mvnPack.o /tmp/tmpLySnHJ/mvProAG2.o /tmp/tmpLySnHJ/polint3.o /tmp/tmpLySnHJ/qromb3.o /tmp/tmpLySnHJ/symInv.o /tmp/tmpLySnHJ/trapzd3.o /tmp/tmpLySnHJ/uvMomNR.o /tmp/tmpLySnHJ/uvProNR.o -lg2c-pic -o ./mvnlib.so
+/tmp/tmpLySnHJ/mvProAG2.o(.text+0x23a0): In function `mvfinit_':
+: multiple definition of `mvfinit_'
+/tmp/tmpLySnHJ/mvMomVecAG2.o(.text+0x2770): first defined here
+/usr/bin/ld: Warning: size of symbol `mvfinit_' changed from 117 in /tmp/tmpLySnHJ/mvMomVecAG2.o to 96 in /tmp/tmpLySnHJ/mvProAG2.o
+/tmp/tmpLySnHJ/mvProAG2.o(.text+0x2400): In function `mvf_':
+: multiple definition of `mvf_'
+/tmp/tmpLySnHJ/mvMomVecAG2.o(.text+0x27f0): first defined here
+/usr/bin/ld: Warning: size of symbol `mvf_' changed from 110 in /tmp/tmpLySnHJ/mvMomVecAG2.o to 92 in /tmp/tmpLySnHJ/mvProAG2.o
+/tmp/tmpLySnHJ/symInv.o(.text+0x3b0): In function `syminv_':
+: multiple definition of `syminv_'
+/tmp/tmpLySnHJ/mvnPack.o(.text+0x9580): first defined here
+/usr/bin/ld: Warning: size of symbol `syminv_' changed from 320 in /tmp/tmpLySnHJ/mvnPack.o to 1151 in /tmp/tmpLySnHJ/symInv.o
+/tmp/tmpLySnHJ/uvProNR.o(.text+0xac0): In function `uvfinit_':
+: multiple definition of `uvfinit_'
+/tmp/tmpLySnHJ/uvMomNR.o(.text+0xb40): first defined here
+/usr/bin/ld: Warning: size of symbol `uvfinit_' changed from 91 in /tmp/tmpLySnHJ/uvMomNR.o to 70 in /tmp/tmpLySnHJ/uvProNR.o
+/tmp/tmpLySnHJ/uvProNR.o(.text+0xa70): In function `uvf_':
+: multiple definition of `uvf_'
+/tmp/tmpLySnHJ/uvMomNR.o(.text+0xae0): first defined here
+/usr/bin/ld: Warning: size of symbol `uvf_' changed from 83 in /tmp/tmpLySnHJ/uvMomNR.o to 65 in /tmp/tmpLySnHJ/uvProNR.o
+collect2: ld returned 1 exit status
+/tmp/tmpLySnHJ/mvProAG2.o(.text+0x23a0): In function `mvfinit_':
+: multiple definition of `mvfinit_'
+/tmp/tmpLySnHJ/mvMomVecAG2.o(.text+0x2770): first defined here
+/usr/bin/ld: Warning: size of symbol `mvfinit_' changed from 117 in /tmp/tmpLySnHJ/mvMomVecAG2.o to 96 in /tmp/tmpLySnHJ/mvProAG2.o
+/tmp/tmpLySnHJ/mvProAG2.o(.text+0x2400): In function `mvf_':
+: multiple definition of `mvf_'
+/tmp/tmpLySnHJ/mvMomVecAG2.o(.text+0x27f0): first defined here
+/usr/bin/ld: Warning: size of symbol `mvf_' changed from 110 in /tmp/tmpLySnHJ/mvMomVecAG2.o to 92 in /tmp/tmpLySnHJ/mvProAG2.o
+/tmp/tmpLySnHJ/symInv.o(.text+0x3b0): In function `syminv_':
+: multiple definition of `syminv_'
+/tmp/tmpLySnHJ/mvnPack.o(.text+0x9580): first defined here
+/usr/bin/ld: Warning: size of symbol `syminv_' changed from 320 in /tmp/tmpLySnHJ/mvnPack.o to 1151 in /tmp/tmpLySnHJ/symInv.o
+/tmp/tmpLySnHJ/uvProNR.o(.text+0xac0): In function `uvfinit_':
+: multiple definition of `uvfinit_'
+/tmp/tmpLySnHJ/uvMomNR.o(.text+0xb40): first defined here
+/usr/bin/ld: Warning: size of symbol `uvfinit_' changed from 91 in /tmp/tmpLySnHJ/uvMomNR.o to 70 in /tmp/tmpLySnHJ/uvProNR.o
+/tmp/tmpLySnHJ/uvProNR.o(.text+0xa70): In function `uvf_':
+: multiple definition of `uvf_'
+/tmp/tmpLySnHJ/uvMomNR.o(.text+0xae0): first defined here
+/usr/bin/ld: Warning: size of symbol `uvf_' changed from 83 in /tmp/tmpLySnHJ/uvMomNR.o to 65 in /tmp/tmpLySnHJ/uvProNR.o
+collect2: ld returned 1 exit status
+error: Command "/usr/bin/g77-3.3 -shared /tmp/tmpLySnHJ/tmp/tmpLySnHJ/src/mvnlibmodule.o /tmp/tmpLySnHJ/tmp/tmpLySnHJ/src/fortranobject.o /tmp/tmpLySnHJ/dcuhre.o /tmp/tmpLySnHJ/mvMomVecAG2.o /tmp/tmpLySnHJ/mvnPack.o /tmp/tmpLySnHJ/mvProAG2.o /tmp/tmpLySnHJ/polint3.o /tmp/tmpLySnHJ/qromb3.o /tmp/tmpLySnHJ/symInv.o /tmp/tmpLySnHJ/trapzd3.o /tmp/tmpLySnHJ/uvMomNR.o /tmp/tmpLySnHJ/uvProNR.o -lg2c-pic -o ./mvnlib.so" failed with exit status 1

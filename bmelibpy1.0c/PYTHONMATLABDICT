@@ -1,0 +1,50 @@
+The Pyhton-Matlab Dictionary
+
+Matlab		Python
+------------------------
+all		scipy.alltrue
+any		scipy.sometrue
+or		scipy.logical_or	(if applied to vectors)
+and		scipy.logical_and	(if applied to vectors)
+unique		scipy.unique
+randperm	random.shuffle
+
+cell array	list
+
+cell(n)		[[[] for i in xrange(0,n)] for i in xrange(0,n)]
+
+Remarks :
+
+1. With Python, y=x is just creating a new reference for x and not a copy. If y is modified, then x is modified accordingly.
+Example :
+>>> x=arrayrange(0,3)
+>>> x
+array([0,1,2])
+>>> y=x
+>>> y[2]=0
+>>> y
+array([0,1,0])
+>>> x
+array([0,1,0])
+To make a copy of x, use:
+y=scipy.copy(x)
+
+2. A python vector has dimensions (n,). To convert it into a (n,1) matrix, just use M=V(:,NewAxis) where NewAxis is a Numeric function.
+
+3. Python functions always return a fixed number of return values placed in a tuple. It is not possible to return only some of the return values as in Matlab.
+Ex. MATLAB:
+	x=func(a)	returns x that may be of any type
+	(x,y)=func(a)	returns x and y that may be of any type
+    Python:
+	(x,y)=func(a)	returns x and y that may be of any type
+	t=func(a)	returns tuple t that wherein t[0]=x and t[1]=y
+So, with Python, we should always return the full list of return values in a tuple so that we can use the one we want directly with his name. If some return values must have no value, place [] in the return tuple.
+Ex. in the body of function func:
+	statement 1
+	...
+	statement n
+	if statement:
+		return x,[]
+	else:
+		return x,y
+

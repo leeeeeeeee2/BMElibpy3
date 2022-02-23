@@ -1,0 +1,14 @@
+
+- test mvn interface
+
+- Homogenize error management
+
+- Replace where it can "where" statements by "find"
+
+- Rewrite the help text in each function so that it matches the python code (e.g. for the type of data: array, list,...)
+
+- Replace "reshape" by "NewAxis" where it can.
+
+- Homogeneize the use of args,kwargs instead of a=4 type grammar.
+	ex. in modellib/modelplot
+
