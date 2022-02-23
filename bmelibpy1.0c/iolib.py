@@ -113,7 +113,7 @@ def readGeoEAS(datafile, colnum=[]):
                         
             ## Returns the parameters converting the val list to a Numeric.array
             print 'Data loaded'
-            return (array(val,Float32),valname, filetitle)
+            return (array(val,float),valname, filetitle)
     finally:
         f.close()
                         

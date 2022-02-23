@@ -1,10 +1,12 @@
 from math import *
+import numpy
 from scipy import *
 from scipy.interpolate import *
+from scipy.sparse import find
 
 from modellib import *
 import BMEmatlab
-import mvnAG1
+import mvnlib
 
 
 def cdf2pdf(z,cdf):
@@ -2957,14 +2959,14 @@ def histscaled(z,nbins,bounds=None,w=None):
         bounds=[amin(z),amax(z)]
     
     if w == None:
-        w=ones(z.shape,Float32)/len(z)
+        w=ones(z.shape,float)/len(z)
 
     w = take(w,find(~ isnan(w)))
     z = take(z,find(~ isnan(z)))
     
-    histClass = arrayrange(bounds[0],bounds[1]+(bounds[1]-bounds[0])/float(nbins),(bounds[1]-bounds[0])/float(nbins),typecode=Float32)
+    histClass = numpy.arange(bounds[0],bounds[1]+(bounds[1]-bounds[0])/float(nbins),(bounds[1]-bounds[0])/float(nbins))
     x= (histClass[1:nbins+1]+histClass[0:nbins])/2;
-    n = zeros(x.shape,Float32);
+    n = zeros(x.shape,float);
     for i in xrange(0,nbins):
         index= find((z>histClass[i]) & (z<=histClass[i+1]))
         n[i] = sum(take(w,index))
@@ -2974,7 +2976,7 @@ def histscaled(z,nbins,bounds=None,w=None):
     n=n/(x[1]-x[0])
 
     #if True:
-    bar(x,n)
+    pyplot.bar(x,n)
     
     return (n,x)
 

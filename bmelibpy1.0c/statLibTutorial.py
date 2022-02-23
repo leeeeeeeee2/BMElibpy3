@@ -9,7 +9,8 @@ Status: not completed: coregfit
 
 import matplotlib
 matplotlib.use('TkAgg')
-from matplotlib.matlab import *
+# from matplotlib.matlab import *
+from matplotlib.pylab import *
 from scipy import *
 from scipy.stats import *
 
