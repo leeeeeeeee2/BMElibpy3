@@ -1,3 +1,4 @@
+#coding=utf-8
 ## import iolib
 ## import modellib
 ## import statlib
@@ -10,7 +11,7 @@
 
 import matplotlib
 matplotlib.use('GTK')
-from matplotlib.matlab import *
+# from matplotlib.matlab import *
 from scipy import *
 from scipy.stats import *
 from scipy.interpolate import *
@@ -60,7 +61,7 @@ def aniso2iso(c,angle,ratio):
     %                  are used, such that angle(1) is the horizontal trigonometric
     %                  angle and angle(2) is the vertical trigonometric angle for the
     %                  principal axis of the ellipsoid. All the angles are measured
-    %                  counterclockwise in degrees and are between -90° and 90°.
+    %                  counterclockwise in degrees and are between -90ï¿½ and 90ï¿½.
     % ratio   1 by d-1 vector that characterize the ratio for the length of the axes
     %                  for the ellipse (in 2D) or ellipsoid (in 3D). In a two dimensional
     %                  space, ratio is the length of the principal axis of the ellipse
@@ -1477,7 +1478,7 @@ def iso2aniso(ciso,angle,ratio):
     %                  are used, such that angle(1) is the horizontal trigonometric
     %                  angle and angle(2) is the vertical trigonometric angle for the
     %                  principal axis of the ellipsoid. All the angles are measured
-    %                  counterclockwise in degrees and are between -90° and 90°.
+    %                  counterclockwise in degrees and are between -90ï¿½ and 90ï¿½.
     % ratio   1 by d-1 vector that characterize the ratio for the length of the axes
     %                  for the ellipse (in 2D) or ellipsoid (in 3D). In a two dimensional
     %                  space, ratio is the length of the principal axis of the ellipse

@@ -1,6 +1,6 @@
 from scipy import *
 import scipy
-from matplotlib.matlab import *
+# from matplotlib.matlab import *
 
 def automesh(*args):
     '''

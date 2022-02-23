@@ -1,4 +1,4 @@
-from matplotlib.matlab import *
+# from matplotlib.matlab import *
 from scipy import *
 
 def exponentialC(D,param):
